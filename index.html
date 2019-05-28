@@ -1,0 +1,116 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <title>Country Demo</title>
+        <meta name="description" content="Country Demo">
+
+        <style type="text/css">
+            div#search,
+            div#results,
+            div#stats {
+                position: relative;
+                background: #fff;
+                width: 800px;
+                padding: 30px 30px;
+                margin: 50px auto 20px;
+                font-family: Arial, Helvetica;
+                font-size: 12px;
+                border: 2px solid #000;
+                border-radius: 20px;
+            }
+            div#search h3 {
+                position: absolute;
+                left: 20px;
+                top: -20px;
+                margin: 0;
+                padding: 5px 20px;
+                font-weight: bold;
+                background: #000;
+                color: #fff;
+                border: 2px solid #fff;
+                border-radius: 10px;
+            }
+            div#search label {
+                display: block;
+            }
+            div#search input {
+                padding: 5px;
+            }
+            div#search input[type='submit'] {
+                padding: 5px 10px;
+                background: #009;
+                color: #fff;
+                border-radius: 10px;
+            }
+            div#search input[type='submit']:hover {
+                background: #fff;
+                color: #009;
+            }
+            div#search input#term {
+                width:300px;
+            }
+            div#results {
+                margin-top: 0;
+                display: none;
+            }
+            div#results table {
+                width: 100%;
+                min-width: 800px;
+            }
+            div#results tr:nth-child(even) {
+                background: #ddd;
+            }
+            div#results td {
+                padding-bottom: 10px;
+            }
+            div#results .head {
+                display: inline-block;
+                vertical-align: top;
+                font-weight: bold;
+            }
+            div#results .flag,
+            div#results .name,
+            div#results .alpha2code,
+            div#results .alpha3code,
+            div#results .region,
+            div#results .subregion,
+            div#results .population,
+            div#results .languages {
+                display: inline-block;
+                vertical-align: top;
+                /*border: 1px solid #000;*/
+            }
+            div#results .flag { min-width: 75px; }
+            div#results .name { width: 200px; }
+            div#results .alpha2code { width: 50px; text-align: center; }
+            div#results .alpha3code { width: 50px; text-align: center; }
+            div#results .region { width: 75px; }
+            div#results .subregion { width: 75px; }
+            div#results .population { width: 100px; text-align: right; }
+            div#results .languages { width: 150px; text-align: right; }
+            div#stats { display:none; }
+
+        </style>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="country-demo/js/countrysearch.js"></script>
+
+    </head>
+
+    <body>
+
+        <div id="search">
+            <h3>COUNTRY SEARCH</h3>
+            <form name="countrysearch" id="countrysearch">
+                <label for="term">Please Enter a Country Name, 2, or 3 Digit Code:</label>
+                <input type="text" name="term" id="term" placeholder="Enter Name or Code"/>
+                <input type="submit" name="btnsubmit" id="btnsubmit" value="SEARCH"/>
+            </form>
+        </div>
+        <div id="results">Loading...</div>
+        <div id="stats"></div>
+    </body>
+</html>
